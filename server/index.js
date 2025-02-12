@@ -11,7 +11,11 @@ const __dirname = dirname(__filename);
 config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['https://soft-kitsune-d9cbbb.netlify.app'],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Configurar Mercado Pago
